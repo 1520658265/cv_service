@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xunjer.cn.personal_cv.mapper.CvConfigMapper">
+    <select id="selectAll" resultType="com.xunjer.cn.personal_cv.model.CvConfig">
+        select * from cv_config where enable =1
+    </select>
+    <insert id="insert" >
+        inset into cv_config (type,content,extend,remark,order,enabled) values ()
+    </insert>
+
+    <select id="selectByType"  resultType="com.xunjer.cn.personal_cv.model.CvConfig">
+        select * from cv_config where enable = 1 and type = #{type}
+    </select>
+
+    <select id="countByType" resultType="int">
+        select count() from cv_config where enable = 1 and type = #{type}
+    </select>
+
+</mapper>
